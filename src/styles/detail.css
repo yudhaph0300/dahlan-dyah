@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mea+Culpa&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+.detail-carousel {
+   position: relative;
+   height: 100vh;
+   overflow: hidden;
+}
+
+.img-car {
+   height: 100vh;
+   object-fit: cover;
+}
+
+.caption-top {
+   position: absolute;
+   top: 0;
+   width: 100%;
+   padding: 1rem 0;
+   padding-top: 10%;
+   letter-spacing: 2px;
+   font-family: "Mea Culpa", cursive;
+   font-style: normal;
+   color: #222;
+   z-index: 10;
+   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+}
+
+.caption-bottom {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   padding: 2rem 0;
+   padding-bottom: 10%;
+   color: #222;
+   z-index: 10;
+   background: linear-gradient(to top, rgba(255, 255, 255, 0.6), transparent);
+}
+
+.content-1 {
+   min-height: 100vh;
+}
+
+.container {
+   font-family: "Inter", sans-serif;
+   padding: 20px !important;
+}
+
+
+.welcome-container {
+   margin-top: 20%;
+}
+
+.subtitle {
+   font-size: 0.8rem;
+   color: #222;
+   opacity: 70%;
+   font-style: italic;
+}
+
+.font-script {
+   font-family: "Mea Culpa", cursive;
+}
+
+.noto-serif {
+   font-family: "Noto Serif", serif;
+   font-style: normal;
+}
+
+/* styles.css */
+.countdown {
+   font-family: 'Inter', sans-serif;
+   font-size: 2rem;
+   color: #444;
+}
