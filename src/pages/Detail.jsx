@@ -1,15 +1,32 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import "../styles/detail.css"; // pastikan CSS kamu tersambung
 import CountdownTimer from "../components/CountdownTimer";
 
 function Detail() {
-  const contentRef = useRef(null); // ref ke konten bawah
+  const contentRef = useRef(null);
+  const audioRef = useRef(null);
+
+  const handleClick = () => {
+    handleScrollClick();
+    handlePlayMusic();
+  };
 
   const handleScrollClick = () => {
     contentRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const [hasPlayed, setHasPlayed] = useState(false);
+
+  const handlePlayMusic = () => {
+    if (audioRef.current && !hasPlayed) {
+      audioRef.current.play();
+      setHasPlayed(true);
+    }
+  };
   return (
     <>
+      {/* Audio autoplay */}
+      <audio ref={audioRef} src="/music.mp3" preload="auto" />
       <div className="detail-carousel position-relative">
         {/* Static Caption Atas */}
         <div className="caption-top text-center">
@@ -52,7 +69,7 @@ function Detail() {
         {/* Static Caption Bawah */}
         <div className="caption-bottom text-center">
           <button
-            onClick={handleScrollClick}
+            onClick={handleClick}
             className="btn btn-light px-4 shadow rounded-pill"
           >
             Scroll To Begin
