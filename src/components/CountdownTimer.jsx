@@ -40,7 +40,7 @@ function CountdownTimer({ targetDate }) {
         padding: "60px 20px",
       }}
     >
-      <h2 className="coming-title">Waktu menuju hari-H</h2>
+      <h4 className="noto-serif text-center mb-3">The Bridge</h4>
 
       <div className="time-box-wrapper">
         {["days", "hours", "minutes", "seconds"].map((unit, i) => (
