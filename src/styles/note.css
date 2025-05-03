@@ -1,0 +1,27 @@
+.form-control {
+   background-color: #f7f7f7 !important;
+   border: none !important;
+}
+
+
+.tag-kehadiran {
+   background-color: #222;
+   color: white;
+}
+
+.note-list-container {
+   max-height: 400px;
+   overflow-y: auto;
+   padding-right: 5px;
+   /* Agar scroll tidak menimpa isi */
+}
+
+/* Optional: Styling untuk scrollbar agar lebih halus */
+.note-list-container::-webkit-scrollbar {
+   width: 6px;
+}
+
+.note-list-container::-webkit-scrollbar-thumb {
+   background-color: rgba(0, 0, 0, 0.2);
+   border-radius: 4px;
+}

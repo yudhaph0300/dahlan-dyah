@@ -1,9 +1,14 @@
 import "../styles/home.css";
 import CountdownTimer from "../components/CountdownTimer";
 import { useRef, useState } from "react";
+import CarouselComponent from "../components/CarouselComponent";
+import { useParams } from "react-router-dom";
+import NoteForm from "../components/NoteForm";
+import NoteList from "../components/NoteList";
 function Home() {
   const [isOpened, setIsOpened] = useState(false);
   const [hasPlayed, setHasPlayed] = useState(false);
+  const { name } = useParams();
 
   const handleOpen = () => {
     setIsOpened(true);
@@ -57,12 +62,12 @@ function Home() {
               />
               <div className="carousel-caption-custom">
                 <div className="typography-wrapper text-center">
+                  <p className="wedding-date mb-2">- Wedding Invitation -</p>
                   <h1 className="wedding-names">Dahlan & Dyah</h1>
-                  <p className="wedding-date">- KAMIS, 12 Juni 2025 -</p>
-                  <p className="wedding-tagline">
-                    "Dengan cinta yang tulus, kami mengundang Anda untuk menjadi
-                    bagian dari hari bahagia kami"
-                  </p>
+                  <p className="wedding-tagline mb-0">Kepada yth:</p>
+                  <h3 className="text-dark mt-1 mb-4 noto-serif text-uppercase">
+                    {name}
+                  </h3>
                   <div className="btn-container">
                     <button
                       onClick={handleOpen}
@@ -87,7 +92,12 @@ function Home() {
             <div className="detail-carousel position-relative">
               {/* Static Caption Atas */}
               <div className="caption-top text-center">
-                <h3>Wedding Invitation</h3>
+                <h2>Wedding Invitation</h2>
+                <p className="wedding-date">- KAMIS, 12 Juni 2025 -</p>
+                <p className="wedding-tagline mb-0">Kepada yth:</p>
+                <h3 className="text-dark mt-1 mb-4 noto-serif text-uppercase">
+                  {name}
+                </h3>
               </div>
 
               {/* Carousel */}
@@ -99,23 +109,9 @@ function Home() {
                 <div className="carousel-inner">
                   <div className="carousel-item active">
                     <img
-                      src="/images/carousel/1.jpg"
+                      src="/images/second-main.jpg"
                       className="d-block w-100 img-car"
                       alt="Slide 1"
-                    />
-                  </div>
-                  <div className="carousel-item">
-                    <img
-                      src="/images/carousel/2.jpg"
-                      className="d-block w-100 img-car"
-                      alt="Slide 2"
-                    />
-                  </div>
-                  <div className="carousel-item">
-                    <img
-                      src="/images/carousel/3.jpg"
-                      className="d-block w-100 img-car"
-                      alt="Slide 3"
                     />
                   </div>
                 </div>
@@ -133,7 +129,7 @@ function Home() {
             </div>
 
             <div className="content-1" ref={contentRef}>
-              <div className="quote text-center px-3 py-5">
+              <div className="quote text-center px-3 py-5 fst-italic">
                 "Dengan izin-Nya kami bertemu, dengan kasih-Nya cinta tumbuh,
                 dan dengan restu-Nya kami melangkah menuju hidup baru sebagai
                 sepasang suami istri."
@@ -219,83 +215,8 @@ function Home() {
                 >
                   Gallery
                 </h4>
-                <div
-                  id="carouselExampleAutoplaying"
-                  className="carousel slide"
-                  data-bs-ride="carousel"
-                  data-bs-interval="3000"
-                >
-                  <div className="carousel-inner">
-                    <div className="carousel-item active">
-                      <img
-                        src="/images/carousel/2.jpg"
-                        className="d-block w-100"
-                        alt="..."
-                      />
-                    </div>
-                    <div className="carousel-item ">
-                      <img
-                        src="/images/carousel/1.jpg"
-                        className="d-block w-100"
-                        alt="..."
-                      />
-                    </div>
 
-                    <div className="carousel-item ">
-                      <img
-                        src="/images/carousel/3.jpg"
-                        className="d-block w-100"
-                        alt="..."
-                      />
-                    </div>
-                  </div>
-                  <button
-                    className="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#carouselExampleAutoplaying"
-                    data-bs-slide="prev"
-                  >
-                    <span
-                      className="carousel-control-prev-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span className="visually-hidden">Previous</span>
-                  </button>
-                  <button
-                    className="carousel-control-next"
-                    type="button"
-                    data-bs-target="#carouselExampleAutoplaying"
-                    data-bs-slide="next"
-                  >
-                    <span
-                      className="carousel-control-next-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span className="visually-hidden">Next</span>
-                  </button>
-                  <div className="carousel-indicators">
-                    <button
-                      type="button"
-                      data-bs-target="#carouselExample"
-                      data-bs-slide-to="0"
-                      className="active"
-                      aria-current="true"
-                      aria-label="Slide 1"
-                    ></button>
-                    <button
-                      type="button"
-                      data-bs-target="#carouselExample"
-                      data-bs-slide-to="1"
-                      aria-label="Slide 2"
-                    ></button>
-                    <button
-                      type="button"
-                      data-bs-target="#carouselExample"
-                      data-bs-slide-to="2"
-                      aria-label="Slide 3"
-                    ></button>
-                  </div>
-                </div>
+                <CarouselComponent />
               </div>
 
               <div className="wedding-gift px-3 py-5">
@@ -304,11 +225,11 @@ function Home() {
                     Wedding Gift
                   </h4>
 
-                  <p>
-                    "Apabila jarak, waktu, atau keadaan membuat
+                  <p className="text-secondary " style={{ fontSize: "1rem" }}>
+                    Apabila jarak, waktu, atau keadaan membuat
                     Bapak/Ibu/Saudara/i berhalangan hadir, dengan penuh hormat
                     kami membuka kesempatan untuk tetap berbagi kebahagiaan
-                    melalui tanda kasih di bawah ini."
+                    melalui tanda kasih di bawah ini.
                   </p>
 
                   <div className="norek">
@@ -351,8 +272,23 @@ function Home() {
                 </div>
               </div>
 
+              <div className="doa" style={{ backgroundColor: "#f1f1f1" }}>
+                <h4
+                  className="noto-serif text-center py-3 mb-0"
+                  style={{ backgroundColor: "#222", color: "white" }}
+                >
+                  RSVP dan Do'a
+                </h4>
+                <div className="mx-3 py-3">
+                  <NoteForm />
+                </div>
+                <div className="mx-3 pb-5">
+                  <NoteList />
+                </div>
+              </div>
+
               <div
-                className="footer text-center px-3 py-5"
+                className="footer text-center px-3 py-5 "
                 style={{ backgroundColor: "#222", color: "white" }}
               >
                 Dengan segala kerendahan hati, kami mengundang kehadiran
