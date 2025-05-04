@@ -44,7 +44,7 @@ function Home() {
   };
 
   return (
-    <>
+    <div className="main-content mx-auto">
       <div className={`home-carousel ${isOpened ? "slide-up" : ""}`}>
         <div
           id="mainCarousel1"
@@ -299,7 +299,7 @@ function Home() {
           </>
         </div>
       )}
-    </>
+    </div>
   );
 }
 

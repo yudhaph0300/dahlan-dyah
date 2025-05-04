@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mea+Culpa&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
+.main-content {
+   max-width: 500px;
+}
+
 .home-carousel {
    position: relative;
    transition: transform 1s ease-in-out, opacity 1s ease-in-out, max-height 1s ease-in-out;
