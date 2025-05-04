@@ -4,7 +4,13 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import CSS
 
 const CarouselComponent = () => {
   return (
-    <Carousel autoPlay infiniteLoop showThumbs={true} showStatus={false}>
+    <Carousel
+      autoPlay
+      infiniteLoop
+      showThumbs={true}
+      showStatus={false}
+      swipeable={false}
+    >
       <div>
         <img src="/images/carousel/1.jpg" alt="Prewedding 1" />
       </div>
