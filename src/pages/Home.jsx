@@ -148,7 +148,7 @@ function Home() {
 
                 <div className="text-center mt-3">
                   <h4 className="noto-serif">DYAH AYU DWI FEBRIYANI</h4>
-                  <p>Putri dari Bpk. Sujina & Ibu Wiwik</p>
+                  <p>Putri dari Bpk. Sujono & Ibu Wiwik</p>
                 </div>
 
                 <div className="d-flex justify-content-center mt-5">
